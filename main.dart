@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,104 +18,105 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Center(child: Text('Flutter layout demo')),
         ),
-        body: Column(
-          children: [
-            (Image.network(
-                'https://cdn.vox-cdn.com/thumbor/dnmjXFHIUQlCrM68ZCuFKVaqauo=/0x105:2000x1230/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/51046461/160902_12-55-55_5DSR4035.0.0.jpg')),
-            const Padding(
-              padding: EdgeInsets.all(32.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 8),
-                          child: Text(
-                            'One World Trade Center',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
+        body: ListView(children: [
+            Column(
+            children: [
+              (Image.network(
+                'https://cdn.vox-cdn.com/thumbor/dnmjXFHIUQlCrM68ZCuFKVaqauo=/0x105:2000x1230/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/51046461/160902_12-55-55_5DSR4035.0.0.jpg',
+                scale: 3,
+              )),
+              const Padding(
+                padding: EdgeInsets.all(32.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 8),
+                            child: Text(
+                              'One World Trade Center',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
                           ),
+                          Text(
+                            'New York City, USA',
+                            style: TextStyle(color: Colors.grey, fontSize: 16),
+                          )
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      Icons.star,
+                      size: 28,
+                      color: Colors.red,
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      '53',
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.phone),
+                          iconSize: 25,
+                          color: Colors.deepPurple,
                         ),
-                        Text(
-                          'New York City, USA',
-                          style: TextStyle(color: Colors.grey, fontSize: 16),
-                        )
+                        const Text('CALL')
                       ],
                     ),
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 28,
-                    color: Colors.red,
-                  ),
-                  SizedBox(
-                    width: 3,
-                  ),
-                  Text(
-                    '53',
-                    style: TextStyle(fontSize: 16),
-                  )
-                ],
+                    
+                    Column(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.near_me),
+                          iconSize: 25,
+                          color: Colors.deepPurple,
+                        ),
+                        const Text('ROUTE')
+                      ],
+                    ),
+                    
+                    Column(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.share),
+                          iconSize: 25,
+                          color: Colors.deepPurple,
+                        ),
+                        const Text('SHARE')
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.phone),
-                        iconSize: 30,
-                        color: Colors.deepPurple,
-                      ),
-                      const Text('CALL')
-                    ],
-                  ),
-                  const SizedBox(
-                    width: 70,
-                  ),
-                  Column(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.near_me),
-                        iconSize: 30,
-                        color: Colors.deepPurple,
-                      ),
-                      const Text('ROUTE')
-                    ],
-                  ),
-                  const SizedBox(
-                    width: 70,
-                  ),
-                  Column(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.share),
-                        iconSize: 30,
-                        color: Colors.deepPurple,
-                      ),
-                      const Text('SHARE')
-                    ],
-                  )
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(32.0),
-              child: (Text(
-                """One World Trade Center, also known as One WTC and Freedom Tower, is the main building of the rebuilt World Trade Center complex in Lower Manhattan, New York City. One World Trade Center is the tallest building in the United States. The supertall structure has the same name as the North Tower of the original World Trade Center, which was destroyed in the terrorist attacks of September 11, 2001.""",
-                style: TextStyle(fontSize: 16),
-              )),
-            )
-          ],
-        ),
+              const Padding(
+                padding: EdgeInsets.all(32.0),
+                child: (Text(
+                  """One World Trade Center, also known as One WTC and Freedom Tower, is the main building of the rebuilt World Trade Center complex in Lower Manhattan, New York City. One World Trade Center is the tallest building in the United States. The supertall structure has the same name as the North Tower of the original World Trade Center, which was destroyed in the terrorist attacks of September 11, 2001.""",
+                  style: TextStyle(fontSize: 16),
+                )),
+              )
+            ],
+          ),
+        ],)
+        
       ),
     );
   }
