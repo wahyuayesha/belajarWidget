@@ -14,79 +14,106 @@ class MyApp extends StatelessWidget {
       // Root widget
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(''),
+          title: const Center(child: Text('Flutter layout demo')),
         ),
-        body: Center(
-            child: Container(
-          height: 540,
-          width: double.infinity,
-          margin: const EdgeInsets.all(30),
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 238, 234, 229),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.3),
-                  spreadRadius: 2,
-                  blurRadius: 8,
-                  offset: const Offset(0, 4),
-                ),
-              ]),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Title: The Eras Tour',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 90, 76, 56)),
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const Divider(
-                color: Colors.black,
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const Center(
-                  child: Image(
-                      image: NetworkImage(
-                          'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/158648e4-fb58-4b77-8053-e91ff4e194e4/dfs72qc-0f7c939b-6e66-423c-885d-48b85927909a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE1ODY0OGU0LWZiNTgtNGI3Ny04MDUzLWU5MWZmNGUxOTRlNFwvZGZzNzJxYy0wZjdjOTM5Yi02ZTY2LTQyM2MtODg1ZC00OGI4NTkyNzkwOWEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2WDe4vbpgDei81mSEsmts3m9kXYutICywXxOs36rp2k',
-                          scale: 5))),
-              const SizedBox(height: 20),
-              const Text(
-                "Description: The Eras Tour is Taylor Swift's 6th tour. It is predicted to become the highest grossing tour ever on December 8, 2024, with a total attendance of 10 million.",
-                style: TextStyle(color: Color.fromARGB(255, 94, 79, 58)),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                  height: 40,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+        body: Column(
+          children: [
+            (Image.network(
+                'https://cdn.vox-cdn.com/thumbor/dnmjXFHIUQlCrM68ZCuFKVaqauo=/0x105:2000x1230/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/51046461/160902_12-55-55_5DSR4035.0.0.jpg')),
+            const Padding(
+              padding: EdgeInsets.all(32.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(
-                          Icons.menu_book,
-                          color: Color.fromARGB(255, 94, 79, 58),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text('visit to read more',
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 8),
+                          child: Text(
+                            'One World Trade Center',
                             style: TextStyle(
-                                color: Color.fromARGB(255, 94, 79, 58))),
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Text(
+                          'New York City, USA',
+                          style: TextStyle(color: Colors.grey, fontSize: 16),
+                        )
                       ],
                     ),
-                  ))
-            ],
-          ),
-        )),
+                  ),
+                  Icon(
+                    Icons.star,
+                    size: 28,
+                    color: Colors.red,
+                  ),
+                  SizedBox(
+                    width: 3,
+                  ),
+                  Text(
+                    '53',
+                    style: TextStyle(fontSize: 16),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.phone),
+                        iconSize: 30,
+                        color: Colors.deepPurple,
+                      ),
+                      const Text('CALL')
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 70,
+                  ),
+                  Column(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.near_me),
+                        iconSize: 30,
+                        color: Colors.deepPurple,
+                      ),
+                      const Text('ROUTE')
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 70,
+                  ),
+                  Column(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.share),
+                        iconSize: 30,
+                        color: Colors.deepPurple,
+                      ),
+                      const Text('SHARE')
+                    ],
+                  )
+                ],
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(32.0),
+              child: (Text(
+                """One World Trade Center, also known as One WTC and Freedom Tower, is the main building of the rebuilt World Trade Center complex in Lower Manhattan, New York City. One World Trade Center is the tallest building in the United States. The supertall structure has the same name as the North Tower of the original World Trade Center, which was destroyed in the terrorist attacks of September 11, 2001.""",
+                style: TextStyle(fontSize: 16),
+              )),
+            )
+          ],
+        ),
       ),
     );
   }
